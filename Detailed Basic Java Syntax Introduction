@@ -1,0 +1,40 @@
+
+import java.util.Scanner;                                   // Line 1. Import the Scanner Tool: Java doesn't load every feature by default to save memory. 
+                                                                  This line tells Java to bring in the Scanner class from its built-in java.util (utility) 
+                                                                  library so you can read user input.
+
+
+
+public class Main {                                        // Line 2. Defines the class: In Java, all code must live inside a class. 
+                                                                      Think of this as the main container for your program. 
+                                                                      (Note: The class name Main must match the filename Main.java.)
+
+
+
+    public static void main(String[] args) {               // Line 3. (String:) The data type. Everything typed into a terminal starts out as plain text (String), even if you type numbers.
+                                                                      [] (Square brackets): Means array (a list of items). Because a user might pass one word, five words, or zero words when 
+                                                                                            starting the program, Java stores them all in a list.
+                                                                      (args:) Just the variable name (short for arguments). You can technically rename it to anything—like String[] myInputs—and 
+                                                                              the code will still work, though args is the universal standard.
+
+
+        Scanner scanner = new Scanner(System.in);          // Line 4. Creates the input reader: This creates a new Scanner object and names it scanner (you could name it input or sc if you prefer).
+
+        // --- PRINTING ---
+        
+
+        System.out.print("Enter your name: ");            // Prints without a new line
+        String name = scanner.nextLine();                 // Reads a full line of text
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();                     // Reads an integer
+
+        // Prints with a new line at the end
+        
+        System.out.println("Hello, " + name + "! You are " + age + " years old.");
+
+        // 3. Close the scanner when done
+        scanner.close();
+
+    }
+}
