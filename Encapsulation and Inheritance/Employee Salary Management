@@ -1,0 +1,44 @@
+class Employee {
+private String name;
+private int employeeId;
+private double salary;
+public Employee(String name, int employeeId, double salary)
+{
+this.name = name;
+this.employeeId = employeeId;
+this.salary = salary;
+}
+public String getName() {
+return name;
+}
+public int getEmployeeId() {
+return employeeId;
+}
+public double getSalary() {
+return salary;
+}
+public void setSalary(double salary) {
+if (salary > 0) {
+this.salary = salary;
+System.out.println("Salary updated successfully.");
+} else {
+System.out.println("Invalid salary!");
+}
+}
+public void displayInfo() {
+System.out.println("Name: " + name);
+System.out.println("Employee ID: " + employeeId);
+
+System.out.println("Salary: " + salary);
+}
+}
+public class Main {
+public static void main(String[] args) {
+Employee e1 = new Employee("Sakib", 501, 30000);
+System.out.println("Before Update:");
+e1.displayInfo();
+e1.setSalary(40000);
+System.out.println("\nAfter Update:");
+e1.displayInfo();
+}
+}
