@@ -1,0 +1,61 @@
+class HospitalStaff {
+String name;
+int staffId;
+public HospitalStaff(String name, int staffId) {
+this.name = name;
+this.staffId = staffId;
+}
+void displayInfo() {
+System.out.println("Name: " + name);
+System.out.println("Staff ID: " + staffId);
+}
+}
+class Doctor extends HospitalStaff {
+String specialization;
+double consultationFee;
+public Doctor(String name, int staffId, String
+specialization,
+double consultationFee) {
+super(name, staffId);
+this.specialization = specialization;
+this.consultationFee = consultationFee;
+}
+@Override
+void displayInfo() {
+System.out.println("Doctor Information:");
+super.displayInfo();
+System.out.println("Specialization: " +
+specialization);
+System.out.println("Consultation Fee: " +
+consultationFee);
+}
+
+}
+class Nurse extends HospitalStaff {
+String shift;
+String ward;
+public Nurse(String name, int staffId, String shift, String
+ward) {
+super(name, staffId);
+this.shift = shift;
+this.ward = ward;
+}
+@Override
+void displayInfo() {
+System.out.println("Nurse Information:");
+super.displayInfo();
+System.out.println("Shift: " + shift);
+System.out.println("Ward: " + ward);
+}
+}
+public class Main {
+public static void main(String[] args) {
+Doctor d1 = new Doctor("Dr. Ayesha", 201, "Cardiology",
+1200);
+Nurse n1 = new Nurse("Mina", 301, "Night", "Ward 5");
+d1.displayInfo();
+System.out.println();
+n1.displayInfo();
+}
+}
+
