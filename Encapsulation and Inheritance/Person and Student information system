@@ -1,0 +1,26 @@
+class Person {
+String name;
+int age;
+public Person(String name, int age) {
+this.name = name;
+this.age = age;
+}
+}
+class Student extends Person {
+int studentId;
+public Student(String name, int age, int studentId) {
+super(name, age);
+this.studentId = studentId;
+}
+public void displayInfo() {
+System.out.println("Name: " + name);
+System.out.println("Age: " + age);
+System.out.println("Student ID: " + studentId);
+}
+}
+public class Main {
+public static void main(String[] args) {
+Student s1 = new Student("Rahim", 22, 101);
+s1.displayInfo();
+}
+}
