@@ -1,0 +1,54 @@
+class Course {
+String courseName;
+String courseCode;
+public Course(String courseName, String courseCode) {
+this.courseName = courseName;
+this.courseCode = courseCode;
+}
+void displayInfo() {
+System.out.println("Course Name: " + courseName);
+System.out.println("Course Code: " + courseCode);
+}
+}
+class TheoryCourse extends Course {
+int creditHours;
+public TheoryCourse(String name, String code, int
+creditHours) {
+super(name, code);
+this.creditHours = creditHours;
+}
+@Override
+void displayInfo() {
+System.out.println("Theory Course:");
+super.displayInfo();
+System.out.println("Credit Hours: " + creditHours);
+}
+}
+class LabCourse extends Course {
+int labDuration;
+public LabCourse(String name, String code, int labDuration)
+
+{
+super(name, code);
+this.labDuration = labDuration;
+}
+@Override
+void displayInfo() {
+System.out.println("Lab Course:");
+super.displayInfo();
+System.out.println("Lab Duration: " + labDuration + "
+hours");
+}
+}
+public class Main {
+public static void main(String[] args) {
+TheoryCourse theory =
+new TheoryCourse("Object Oriented Programming",
+"CSE 2111", 3);
+LabCourse lab =
+new LabCourse("OOP Laboratory", "CSE 2112", 2);
+theory.displayInfo();
+System.out.println();
+lab.displayInfo();
+}
+}
